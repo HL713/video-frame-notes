@@ -1,6 +1,6 @@
 # video-frame-notes
 
-A Codex skill that processes video links or local videos, extracts and checks video frames, and creates timestamped Chinese notes from the visuals, audio, and subtitles. The notes include additional explanations to make key ideas easier to understand. When processing is complete, only the notes are kept; generated videos, frames, and other temporary files are deleted.
+A Codex skill that processes video links or local videos, scans every decodable frame for visual changes, and creates timestamped Chinese notes from the visuals, audio, and subtitles. Only informative frames are temporarily saved for closer review. The notes include additional explanations to make key ideas easier to understand. When processing is complete, only the notes are kept; generated videos, frames, and other temporary files are deleted.
 
 ## Installation
 
@@ -15,7 +15,7 @@ Start a new Codex session and invoke it with `$video-frame-notes`.
 - Codex
 - Node.js 22 or later to run `web-access`
 - The `web-access` skill, installed separately for processing video links
-- FFmpeg, preferably with `ffprobe`, for video decoding and frame extraction
+- FFmpeg, preferably with `ffprobe`, for video decoding and frame analysis
 - Chrome or Edge for websites that require browser access or login
 - Chinese OCR and speech transcription tools when the video contains on-screen text or has no subtitles
 
@@ -24,7 +24,7 @@ This repository contains the skill instructions only. It does not include the to
 
 # video-frame-notes
 
-一个 Codex skill：处理视频链接或本地视频，逐帧核对画面，并结合声音、字幕生成带时间戳和补充讲解的中文笔记。完成后只保留笔记，清理本次生成的视频、帧和其他临时文件。
+一个 Codex skill：处理视频链接或本地视频，流式扫描每个可解码帧，只临时保存需要细看的画面，并结合声音、字幕生成带时间戳和补充讲解的中文笔记。完成后只保留笔记，清理本次生成的视频、画面和其他临时文件。
 
 ## 安装
 
@@ -39,7 +39,7 @@ This repository contains the skill instructions only. It does not include the to
 - Codex
 - Node.js 22+：运行 web-access
 - web-access skill：处理视频链接时需要单独安装
-- FFmpeg，建议同时安装 ffprobe：视频解码与逐帧处理
+- FFmpeg，建议同时安装 ffprobe：视频解码与逐帧扫描
 - Chrome 或 Edge：部分网站需要浏览器访问或登录
 - 中文 OCR、语音转写工具：视频有课件文字或没有字幕时需要相应能力
 
